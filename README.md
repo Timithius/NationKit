@@ -16,7 +16,7 @@ NationKit offers a few features at the moment, but more will come in future upda
 - Added 16 unique governments. Most can't be achieved just yet...
 - Simplified UI
 
-*** Dependencies
+### Dependencies
 - Worldguard, WorldEdit, & Dynmap
 
 ### FAQ
