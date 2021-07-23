@@ -1,0 +1,11 @@
+name: NationKit
+main: io.nationkit.operator
+author: Timithius
+version: 0.1.3-PREAPLHA
+api-version: 1.17
+depend: [dynmap, WorldGuard, WorldEdit]
+commands:
+  nation:
+    description: Test!
+  debug:
+    description: test

@@ -1,0 +1,26 @@
+settings:
+  levelThreshold:
+    2: 1000
+    3: 7500
+    4: 20000
+    5: 50000
+  levelUnlocks:
+    2: 5cp
+    3: 15cp
+    4: 25cp
+    5: 30WIP
+  civicPointsRequired:
+    tribal: 1
+    cityState: 1
+    feudalState: 3
+    monarchy: 5
+    theocracy: 5
+    merchantRepublic: 10
+    aristocracy: 10
+    colonialEmpire: 15
+    socialistRepublic: 20
+    communistState: 20
+    democracy: 20
+    federalRepublic: 30
+    totalitarianState: 30
+    neoliberalDemocracy: 30
