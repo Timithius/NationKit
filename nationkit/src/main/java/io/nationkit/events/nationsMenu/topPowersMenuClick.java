@@ -8,18 +8,18 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class topPowersMenuClick implements Listener {
-    private mainMenu mm = new mainMenu();
+    private mainMenu mainMenu = new mainMenu();
 
     @EventHandler
     public void topPowersMenuClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
 
         if(e.getView().getTitle().equalsIgnoreCase("Top Powers")){
-            if(e.getCurrentItem() != null) {
-                if (e.getCurrentItem().getType().equals(Material.IRON_NUGGET)) {
-                    mm.mainMenu(player);
+            if(e.getCurrentItem() != null){
+                if(e.getCurrentItem().getType().equals(Material.IRON_NUGGET)){
+                    mainMenu.mainMenu(player);
                 }
-                if (e.getCurrentItem().getType().equals(Material.BLACK_BANNER)) {
+                if(e.getCurrentItem().getType().equals(Material.BLACK_BANNER)){
                     e.setCancelled(true);
                 }
             }

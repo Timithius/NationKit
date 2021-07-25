@@ -14,8 +14,8 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class nationSettingsMenuClick implements Listener {
-    private nationManagerMenu nmm = new nationManagerMenu();
-    private nationSettingsMenu nsm = new nationSettingsMenu();
+    private nationManagerMenu nationManagerMenu = new nationManagerMenu();
+    private nationSettingsMenu nationSettingsMenu = new nationSettingsMenu();
     private operator plugin;
     private nationsConfig data;
     private playersConfig data1;
@@ -32,7 +32,7 @@ public class nationSettingsMenuClick implements Listener {
                 Material nationBannerMaterial = nationBanner.getType();
 
                 if(e.getCurrentItem().getType().equals(Material.IRON_NUGGET)){
-                    nmm.nationManagerMenu(player);
+                    nationManagerMenu.nationManagerMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.OAK_SIGN)){
                     player.closeInventory();
@@ -61,19 +61,19 @@ public class nationSettingsMenuClick implements Listener {
                     data.getConfig().set("nations." + name + ".privacySetting", "limited");
                     data.saveConfig();
 
-                    nsm.nationSettingsMenu(player);
+                    nationSettingsMenu.nationSettingsMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.PINK_DYE)){
                     data.getConfig().set("nations." + name + ".privacySetting", "closed");
                     data.saveConfig();
 
-                    nsm.nationSettingsMenu(player);
+                    nationSettingsMenu.nationSettingsMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.GRAY_DYE)){
                     data.getConfig().set("nations." + name + ".privacySetting", "open");
                     data.saveConfig();
 
-                    nsm.nationSettingsMenu(player);
+                    nationSettingsMenu.nationSettingsMenu(player);
                 }
             }
 

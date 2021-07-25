@@ -16,8 +16,8 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import java.util.UUID;
 
 public class membersMenuClick implements Listener {
-    private nationManagerMenu nmm = new nationManagerMenu();
-    private memberProfileMenu mpm = new memberProfileMenu();
+    private nationManagerMenu nationManagerMenu = new nationManagerMenu();
+    private memberProfileMenu memberProfileMenu = new memberProfileMenu();
     private operator plugin;
     private nationsConfig data;
     private playersConfig data1;
@@ -36,7 +36,7 @@ public class membersMenuClick implements Listener {
                     data2.getConfig().set("nations." + name + ".memberNamesToUUID", null);
                     data2.saveConfig();
 
-                    nmm.nationManagerMenu(player);
+                    nationManagerMenu.nationManagerMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.PLAYER_HEAD)){
                     String targetDisplayName = e.getCurrentItem().getItemMeta().getDisplayName();
@@ -44,7 +44,7 @@ public class membersMenuClick implements Listener {
                     String targetUUIDString = data2.getConfig().getString("nations." + name + ".memberNamesToUUID." + ChatColor.stripColor(targetDisplayName));
                     UUID targetUUID = UUID.fromString(targetUUIDString);
 
-                    mpm.memberProfileMenu(player, targetUUID);
+                    memberProfileMenu.memberProfileMenu(player, targetUUID);
 
                     data2.getConfig().set("nations." + name + ".memberNamesToUUID", null);
                     data2.saveConfig();

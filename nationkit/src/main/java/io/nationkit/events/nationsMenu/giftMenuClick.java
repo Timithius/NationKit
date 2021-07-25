@@ -21,9 +21,8 @@ public class giftMenuClick implements Listener {
 
     @EventHandler
     public void giftMenuClose(InventoryCloseEvent e){
-        this.data = new giftConfig(plugin.getPlugin(operator.class));
-
         if(e.getView().getTitle().equalsIgnoreCase(ChatColor.RED + "Gifts are sent after closing this inventory!")){
+            this.data = new giftConfig(plugin.getPlugin(operator.class));
             Player player = (Player) e.getPlayer();
             Inventory inventory = e.getInventory();
             String uuid_str = ChatColor.stripColor(inventory.getItem(17).getItemMeta().getDisplayName());

@@ -8,16 +8,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class helpMenuClick implements Listener {
-    private mainMenu mm = new mainMenu();
+    private mainMenu mainMenu = new mainMenu();
 
     @EventHandler
     public void helpMenuClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
 
         if(e.getView().getTitle().equalsIgnoreCase("Coming Soon")){
-            if(e.getCurrentItem() != null) {
-                if (e.getCurrentItem().getType().equals(Material.BARRIER)) {
-                    mm.mainMenu(player);
+            if(e.getCurrentItem() != null){
+                if(e.getCurrentItem().getType().equals(Material.BARRIER)){
+                    mainMenu.mainMenu(player);
                 }
             }
 

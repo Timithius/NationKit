@@ -13,9 +13,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 
-import java.util.Date;
-import java.util.Random;
-
 public class mobKill implements Listener {
     private operator plugin;
     private nationsConfig data;

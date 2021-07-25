@@ -15,9 +15,9 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class mainMenuClick implements Listener {
-    private helpMenu hm = new helpMenu();
-    private topPowersMenu tpm = new topPowersMenu();
-    private nationManagerMenu nmm = new nationManagerMenu();
+    private helpMenu helpMenu = new helpMenu();
+    private topPowersMenu topPowersMenu = new topPowersMenu();
+    private nationManagerMenu nationManagerMenu = new nationManagerMenu();
     private operator plugin;
     private nationsConfig data;
     private playersConfig data1;
@@ -39,34 +39,34 @@ public class mainMenuClick implements Listener {
                     player.sendMessage(ChatColor.GRAY + "Working on the book. Ask in discord, or try " + ChatColor.GOLD + "/nation help");
                 }
                 if(e.getCurrentItem().getType().equals(Material.END_CRYSTAL)){
-                    tpm.topPowersMenu(player);
+                    topPowersMenu.topPowersMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.DIAMOND_SWORD)) {
-                    hm.helpMenu(player);
+                    helpMenu.helpMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.SHIELD)){
-                    hm.helpMenu(player);
+                    helpMenu.helpMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.GOLD_INGOT)){
-                    hm.helpMenu(player);
+                    helpMenu.helpMenu(player);
                 }
                 if(hasNation){
                     if(e.getCurrentItem().getType().equals(nationBanner.getType())){
-                        nmm.nationManagerMenu(player);
+                        nationManagerMenu.nationManagerMenu(player);
                     }
                 }else{
                     if(e.getCurrentItem().getType().equals(Material.WHITE_BANNER)){
-                        nmm.nationManagerMenu(player);
+                        nationManagerMenu.nationManagerMenu(player);
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.EMERALD)){
-                    hm.helpMenu(player);
+                    helpMenu.helpMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.PAPER)){
-                    hm.helpMenu(player);
+                    helpMenu.helpMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.HEART_OF_THE_SEA)){
-                    hm.helpMenu(player);
+                    helpMenu.helpMenu(player);
                 }
             }
 

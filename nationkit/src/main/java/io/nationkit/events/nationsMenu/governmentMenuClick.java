@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class governmentMenuClick implements Listener {
-    private nationManagerMenu nmm = new nationManagerMenu();
+    private nationManagerMenu nationManagerMenu = new nationManagerMenu();
     private operator plugin;
     private nationsConfig data;
     private playersConfig data1;
@@ -28,7 +28,7 @@ public class governmentMenuClick implements Listener {
         if(e.getView().getTitle().equalsIgnoreCase("Government Type")){
             if(e.getCurrentItem() != null){
                 if(e.getCurrentItem().getType().equals(Material.IRON_NUGGET)){
-                    nmm.nationManagerMenu(player);
+                    nationManagerMenu.nationManagerMenu(player);
                 }
                 if(e.getCurrentItem().getType().equals(Material.CRAFTING_TABLE)){
                     String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
@@ -45,14 +45,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.ARROW)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.cityState");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.ARROW) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.ARROW){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -75,14 +75,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.WHEAT)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.feudalState");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.WHEAT) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.WHEAT){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -105,14 +105,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.DIAMOND)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.monarchy");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.DIAMOND) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.DIAMOND){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -135,14 +135,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.WRITABLE_BOOK)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.theocracy");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.WRITABLE_BOOK) {
+                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.WRITABLE_BOOK){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -165,14 +165,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.EMERALD)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.merchantRepublic");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.EMERALD) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.EMERALD){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -195,14 +195,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.QUARTZ_PILLAR)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.aristocracy");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.QUARTZ_PILLAR) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.QUARTZ_PILLAR){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -225,14 +225,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.WHITE_BANNER)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.colonialEmpire");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.WHITE_BANNER) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.WHITE_BANNER){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -255,14 +255,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.TOTEM_OF_UNDYING)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.socialistRepublic");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.TOTEM_OF_UNDYING) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.TOTEM_OF_UNDYING){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -285,14 +285,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.IRON_PICKAXE)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.communistState");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.IRON_PICKAXE) {
+                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.IRON_PICKAXE){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -315,13 +315,13 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.GOLDEN_HORSE_ARMOR)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.democracy");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
                             if(Material.valueOf(govTypeMat) != Material.GOLDEN_HORSE_ARMOR) {
                                 Location location = player.getLocation();
 
@@ -345,14 +345,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.ENCHANTED_GOLDEN_APPLE)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.federalRepublic");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.ENCHANTED_GOLDEN_APPLE) {
+                        if(civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.ENCHANTED_GOLDEN_APPLE){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -375,14 +375,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.DIAMOND_AXE)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.totalitarianState");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.DIAMOND_AXE) {
+                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.DIAMOND_AXE){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);
@@ -405,14 +405,14 @@ public class governmentMenuClick implements Listener {
                     }
                 }
                 if(e.getCurrentItem().getType().equals(Material.ENCHANTED_BOOK)){
-                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")) {
+                    if(!e.getCurrentItem().getLore().contains(ChatColor.YELLOW + "Current government type")){
                         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
                         String govTypeMat = data.getConfig().getString("nations." + name + ".govTypeMat");
                         int civicPoints = data.getConfig().getInt("nations." + name + ".civicPoints");
                         int civicPointsRequired = data2.getConfig().getInt("settings.civicPointsRequired.neoliberalDemocracy");
 
-                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired) {
-                            if(Material.valueOf(govTypeMat) != Material.ENCHANTED_BOOK) {
+                        if (civicPoints > civicPointsRequired || civicPoints == civicPointsRequired){
+                            if(Material.valueOf(govTypeMat) != Material.ENCHANTED_BOOK){
                                 Location location = player.getLocation();
 
                                 data.getConfig().set("nations." + name + ".civicPoints", civicPoints - civicPointsRequired);

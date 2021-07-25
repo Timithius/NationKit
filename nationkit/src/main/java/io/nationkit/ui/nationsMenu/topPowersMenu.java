@@ -1,5 +1,8 @@
 package io.nationkit.ui.nationsMenu;
 
+import io.nationkit.files.nationsConfig;
+import io.nationkit.files.playersConfig;
+import io.nationkit.operator;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -12,7 +15,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 
 public class topPowersMenu {
+    private operator plugin;
+    private nationsConfig data;
+    private playersConfig data1;
+
     public void topPowersMenu(Player player){
+        this.data = new nationsConfig(plugin.getPlugin(operator.class));
+        this.data1 = new playersConfig(plugin.getPlugin(operator.class));
         Inventory inventory = Bukkit.createInventory(null, 18, "Top Powers");
 
         ItemStack top1 = new ItemStack(Material.BLACK_BANNER);

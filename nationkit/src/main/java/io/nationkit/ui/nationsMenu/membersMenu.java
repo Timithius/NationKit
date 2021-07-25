@@ -28,7 +28,6 @@ public class membersMenu {
         this.data = new nationsConfig(plugin.getPlugin(operator.class));
         this.data1 = new playersConfig(plugin.getPlugin(operator.class));
         this.data2 = new tempConfig(plugin.getPlugin(operator.class));
-        
         String name = data1.getConfig().getString("players." + player.getUniqueId().toString() + ".nation");
         String leaderType = data.getConfig().getString("nations." + name + ".leaderType");
         List members = data.getConfig().getList("nations." + name + ".members");

@@ -20,6 +20,7 @@ public class nationManagerMenu {
     private playersConfig data1;
 
     public void nationManagerMenu(Player player){
+        this.ph = new playerHead();
         this.data = new nationsConfig(plugin.getPlugin(operator.class));
         this.data1 = new playersConfig(plugin.getPlugin(operator.class));
         Boolean hasNation = data1.getConfig().getBoolean("players." + player.getUniqueId().toString() + ".hasNation");
@@ -35,7 +36,7 @@ public class nationManagerMenu {
         String nationLT = data.getConfig().getString("nations." + nationName + ".leaderType");
         ItemStack nationBanner = data.getConfig().getItemStack("nations." + nationName + ".banner.material");
 
-        if(!hasNation) {
+        if(!hasNation){
             Inventory inventory = Bukkit.createInventory(null, 9, "Nation View");
 
             ItemStack createNation = new ItemStack(Material.NETHER_STAR);
@@ -71,8 +72,6 @@ public class nationManagerMenu {
             player.openInventory(inventory);
         }
         if(hasNation && isOwner){
-            this.ph = new playerHead();
-
             Inventory inventory = Bukkit.createInventory(null, 54, "Nation View");
             String membersClean;
 
@@ -162,7 +161,6 @@ public class nationManagerMenu {
             player.openInventory(inventory);
         }
         if(hasNation && !isOwner){
-            this.ph = new playerHead();
             Inventory inventory = Bukkit.createInventory(null, 9, "Nation View");
 
             ItemStack nationInfo = new ItemStack(nationBanner);

@@ -13,13 +13,13 @@ import java.util.UUID;
 
 
 public class memberProfileMenuClick implements Listener {
-    private membersMenu mm = new membersMenu();
-    private giftMenu gm = new giftMenu();
+    private membersMenu membersMenu = new membersMenu();
+    private giftMenu giftMenu = new giftMenu();
 
     @EventHandler
     public void memberProfileMenuClick(InventoryClickEvent e){
         if(e.getView().getTitle().equalsIgnoreCase("Citizen Profile")){
-            if(e.getCurrentItem() != null) {
+            if(e.getCurrentItem() != null){
                 Player player = (Player) e.getWhoClicked();
                 String targetUUIDString = null;
 
@@ -34,26 +34,31 @@ public class memberProfileMenuClick implements Listener {
                 UUID target = UUID.fromString(targetUUIDString);
                 String targetDisplayName = Bukkit.getOfflinePlayer(target).getName();
 
-                if(e.getCurrentItem().getType().equals(Material.IRON_NUGGET)){
-                    mm.membersMenu(player);
-                }
-                if(e.getCurrentItem().getType().equals(Material.POWERED_RAIL)){
-                    Location location = Bukkit.getPlayer(target).getLocation();
+                if(Bukkit.getPlayer(target).isOnline()){
+                    if(e.getCurrentItem().getType().equals(Material.IRON_NUGGET)){
+                        membersMenu.membersMenu(player);
+                    }
+                    if(e.getCurrentItem().getType().equals(Material.POWERED_RAIL)){
+                        Location location = Bukkit.getPlayer(target).getLocation();
 
+                        player.closeInventory();
+                        player.teleport(location);
+                        player.playSound(location, Sound.BLOCK_COMPOSTER_FILL_SUCCESS, 5, 1);
+                        player.playSound(location, Sound.BLOCK_DISPENSER_LAUNCH, 10, 1);
+                        player.sendMessage(ChatColor.GRAY + "Taking you to " + ChatColor.GOLD + targetDisplayName);
+                    }
+                    if(e.getCurrentItem().getType().equals(Material.WRITABLE_BOOK)){
+                        player.closeInventory();
+                        player.sendMessage(ChatColor.GRAY + "Type " + ChatColor.GOLD + "/nation message " + targetDisplayName + ChatColor.GRAY + " with your message at the end.");
+                    }
+                    if(e.getCurrentItem().getType().equals(Material.SHULKER_BOX)){
+                        //gm.giftMenu(player, Bukkit.getPlayer(target));
+                        player.closeInventory();
+                        player.sendMessage(ChatColor.GRAY + "Feature coming soon, it's kinda hard to make.");
+                    }
+                }else{
                     player.closeInventory();
-                    player.teleport(location);
-                    player.playSound(location, Sound.BLOCK_COMPOSTER_FILL_SUCCESS, 5, 1);
-                    player.playSound(location, Sound.BLOCK_DISPENSER_LAUNCH, 10, 1);
-                    player.sendMessage(ChatColor.GRAY + "Taking you to " + ChatColor.YELLOW + targetDisplayName);
-                }
-                if(e.getCurrentItem().getType().equals(Material.WRITABLE_BOOK)){
-                    player.closeInventory();
-                    player.sendMessage(ChatColor.GRAY + "Type " + ChatColor.GOLD + "/nation message " + targetDisplayName + ChatColor.GRAY + " with your message at the end.");
-                }
-                if(e.getCurrentItem().getType().equals(Material.SHULKER_BOX)){
-                    //gm.giftMenu(player, Bukkit.getPlayer(target));
-                    player.closeInventory();
-                    player.sendMessage(ChatColor.GRAY + "Feature coming soon, it's kinda hard to make.");
+                    player.sendMessage(ChatColor.GOLD + targetDisplayName + ChatColor.GRAY + " is not online.");
                 }
             }
 
